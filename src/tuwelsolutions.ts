@@ -115,9 +115,6 @@ export function setup(){
         actionElem.innerText = "Load from tuwelsolutions";
         actionElem.addEventListener("click", () => {
             solveQuiz();
-            actionElem.removeAttribute("href");
-            actionElem.innerText = "Solved known questions";
-            actionElem.style.pointerEvents = "none";
         });
         nav.appendChild(actionElem);
     }
@@ -133,5 +130,4 @@ export function setup(){
     }
 
     console.log("tuwelsolutions v1.0.1 running");
-
 }
