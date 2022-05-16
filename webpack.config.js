@@ -2,8 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/tuwelsolutions.ts',
-  /* devtool: 'inline-source-map', */
-  watch: true,
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -18,9 +17,7 @@ module.exports = {
   },
   output: {
     filename: 'tuwelsolutions.js',
-    libraryTarget: 'umd',
     library: 'tws',
-    umdNamedDefine: true,
-    path: path.resolve(__dirname, ''),
+    path: path.resolve(__dirname, 'dist'),
   },
 };
