@@ -100,7 +100,7 @@ async function processQuizResult() {
     // post to server
     await setSolution(solvedQuiz);
 
-    console.log("posted solutions to server: ", solveQuiz);
+    console.log("posted solutions to server: ", solvedQuiz);
 }
 
 /** connects tuwelsolution functions to the UI */
@@ -131,5 +131,7 @@ export function setup(){
         });
         nav.appendChild(actionElem);
     }
+
+    console.log("tuwelsolutions v1.0.1 running");
 
 }
