@@ -3,7 +3,7 @@ import { question, quizSolutions } from "./interfaces";
 import { TuwelMultianswer, TuwelMultianswerSolved } from "./multianswer";
 import { TuwelMultichoice, TuwelMultichoiceSolved } from "./multichoice";
 
-export async function solveQuiz() {
+async function solveQuiz() {
 
     // get the quiz ID
     // @ts-ignore
@@ -61,7 +61,7 @@ export async function solveQuiz() {
  * Process a quiz result on the "TUWEL result page"
  * gets the correct answers, merges with current answers on the server and posts the merge
  */
-export async function processQuizResult() {
+async function processQuizResult() {
 
     // get the quiz ID
     // @ts-ignore
@@ -103,7 +103,6 @@ export async function processQuizResult() {
 
 /** connects tuwelsolution functions to the UI */
 export function setup(){
-
 
     const nav = (document.querySelector(".othernav") as HTMLDivElement);
     const actionElem = document.createElement("a");

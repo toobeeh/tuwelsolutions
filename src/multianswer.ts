@@ -20,7 +20,7 @@ export class TuwelMultianswer {
         this.text = formulation.textContent!;
         this.image = question.querySelector("img")?.src.slice(0, 10000);
         this.answers = [];
-        question.querySelectorAll(".answer > .subquestion select").forEach((select) => {
+        question.querySelectorAll(".subquestion select").forEach((select) => {
 
             const opts: Array<{option: HTMLOptionElement, select: HTMLSelectElement}> = [];
 
@@ -54,7 +54,7 @@ export class TuwelMultianswer {
 
             /* set select value */
             subquestion.forEach(s => {
-                s.option.selected = s.option.value! == solution.answers[index];
+                s.option.selected = s.option.innerText == solution.answers[index];
                 if(s.option.selected) s.select.value = s.option.value;
             });
         });
