@@ -99,6 +99,8 @@ async function processQuizResult() {
 
     // post to server
     await setSolution(solvedQuiz);
+
+    console.log("posted solutions to server: ", solveQuiz);
 }
 
 /** connects tuwelsolution functions to the UI */
@@ -111,12 +113,22 @@ export function setup(){
     
     if(mode == "attempt.php"){
         actionElem.innerText = "Load from tuwelsolutions";
-        actionElem.addEventListener("click", solveQuiz);
+        actionElem.addEventListener("click", () => {
+            solveQuiz();
+            actionElem.removeAttribute("href");
+            actionElem.innerText = "Solved known questions";
+            actionElem.style.pointerEvents = "none";
+        });
         nav.appendChild(actionElem);
     }
     else if(mode == "review.php"){
         actionElem.innerText = "Upload to tuwelsolutions";
-        actionElem.addEventListener("click", processQuizResult);
+        actionElem.addEventListener("click",() => {
+            processQuizResult();
+            actionElem.removeAttribute("href");
+            actionElem.innerText = "Uploaded solutions";
+            actionElem.style.pointerEvents = "none";
+        });
         nav.appendChild(actionElem);
     }
 

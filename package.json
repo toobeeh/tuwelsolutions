@@ -1,7 +1,7 @@
 {
   "name": "tuwelsolutions",
   "main": "./src/tuwelsolutions.ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a tool to auto-solve tuwel tests, based on a growing database",
   "author": "tobeh",
   "license": "ISC",

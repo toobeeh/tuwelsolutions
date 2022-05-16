@@ -21,5 +21,8 @@ backend by Rxcki#5422
 - Cloze question text (with selects)
 
 ## Troubleshoot
-- **`twl is not defined` in the console**  
+- **`tws is not defined` in the console**  
 try another userscript manager
+
+## Script isn't up to date
+- delete external cache in userscript manager / re-install the userscript

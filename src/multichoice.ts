@@ -10,7 +10,7 @@ export class TuwelMultichoice {
     protected image?: string;
 
     /** answer texts and checkbox elements */
-    protected answers: Array<{text: String, element: HTMLInputElement}>;
+    protected answers: Array<{text: string, element: HTMLInputElement}>;
 
     constructor(protected question: HTMLDivElement) {
 
@@ -59,11 +59,11 @@ export class TuwelMultichoiceSolved extends TuwelMultichoice {
     constructor(question: HTMLDivElement) {
         super(question);
         let solution = (question.querySelector(".rightanswer") as HTMLDivElement).innerText;
-        this.correctAnswers = solution
-            .substring(solution.indexOf(":") + 1)
-            .trim()
-            .split(",")
-            .map(a => a.trim());
+        this.correctAnswers = [];
+
+        this.answers.forEach(answer => {
+            if(solution.indexOf(answer.text) > 0) this.correctAnswers.push(answer.text);
+        });
     }
 
     /**
